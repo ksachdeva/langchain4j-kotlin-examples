@@ -1,13 +1,16 @@
 plugins {
-    kotlin("jvm") version "2.1.10"
+    kotlin("jvm") version "2.1.10"    
     application
+    id("com.ncorti.ktfmt.gradle") version("0.18.0") 
 }
 
 // group = "ksachdeva.github.io"
 // version = "0.0.1-SNAPSHOT"
 
 repositories {
-    mavenCentral()      
+    mavenCentral()   
+    gradlePluginPortal()
+    google()
 }
 
 val langchain4jVersion = "1.0.0-beta1"
@@ -27,3 +30,5 @@ application {
         mainClass.set("${property("mainClass")}Kt")
     }    
 }
+
+ktfmt { kotlinLangStyle() }
