@@ -6,3 +6,5 @@
  */
 
 rootProject.name = "langchain4j-kotlin-examples"
+
+include(":tutorials")
