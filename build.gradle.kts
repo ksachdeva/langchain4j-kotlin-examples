@@ -4,3 +4,21 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.12.1/samples
  */
+
+subprojects {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        google()
+    }
+
+    afterEvaluate {
+        if (plugins.hasPlugin("application")) {
+            extensions.configure<JavaApplication> {
+                if (hasProperty("mainClass")) {
+                    mainClass.set("${property("mainClass")}Kt")
+                }
+            }
+        }
+    }
+}
