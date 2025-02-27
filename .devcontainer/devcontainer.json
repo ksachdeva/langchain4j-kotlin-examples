@@ -10,7 +10,7 @@
           "editor.insertSpaces": true,
           "editor.formatOnSave": true,
           "editor.defaultFormatter": "fwcd.kotlin",
-          "java.configuration.updateBuildConfiguration": "automatic"          
+          "java.configuration.updateBuildConfiguration": "automatic"
         },
         "[python]": {
           "editor.tabSize": 4,

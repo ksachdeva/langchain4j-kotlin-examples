@@ -6,9 +6,9 @@ The primary reason of this port is to learn Kotlin language and langchain4j libr
 
 ## Setup
 
-The repository uses devcontainer to setup the development environment. 
+The repository uses devcontainer to setup the development environment.
 
-So far I have used vscode with devcontainer extension to setup the development environment and the experience has not been optimal w.r.t kotlin extension support. 
+So far I have used vscode with devcontainer extension to setup the development environment and the experience has not been optimal w.r.t kotlin extension support.
 
 The repository uses gradle and has multiple subprojects.
 
