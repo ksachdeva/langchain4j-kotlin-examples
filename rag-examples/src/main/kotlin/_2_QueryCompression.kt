@@ -62,7 +62,7 @@ fun main() {
             .contentRetriever(retriever)
             .build()
 
-    var assistant =
+    val assistant =
         AiServices.builder(Assistant::class.java)
             .chatLanguageModel(model)
             .chatMemory(MessageWindowChatMemory.withMaxMessages(10))

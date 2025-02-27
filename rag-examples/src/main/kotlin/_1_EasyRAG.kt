@@ -38,7 +38,7 @@ fun main() {
 
     val retriever = createContentRetriever(documents)
 
-    var assistant =
+    val assistant =
         AiServices.builder(Assistant::class.java)
             .chatLanguageModel(model)
             .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
