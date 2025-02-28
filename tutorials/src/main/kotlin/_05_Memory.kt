@@ -16,7 +16,8 @@ fun main() {
             .modelName(OpenAiChatModelName.GPT_4_O_MINI)
             .build()
 
-    val chatMemory = TokenWindowChatMemory.withMaxTokens(1000, OpenAiTokenizer())
+    val chatMemory =
+        TokenWindowChatMemory.withMaxTokens(1000, OpenAiTokenizer(OpenAiChatModelName.GPT_4_O_MINI))
 
     val systemMessage =
         SystemMessage.from(
@@ -33,7 +34,7 @@ fun main() {
         )
     chatMemory.add(userMessage1)
 
-    println("[User]: " + userMessage1.text())
+    println("[User]: " + userMessage1.singleText())
     print("[LLM]: ")
 
     val futureAiMessage = CompletableFuture<AiMessage>()
@@ -41,7 +42,7 @@ fun main() {
     val responseHandler =
         object : StreamingChatResponseHandler {
             override fun onPartialResponse(message: String) {
-                println("Received message: $message")
+                print(message)
             }
 
             override fun onCompleteResponse(response: ChatResponse) {
@@ -64,7 +65,7 @@ fun main() {
         )
     chatMemory.add(userMessage2)
 
-    println("\n\n[User]: " + userMessage2.text())
+    println("\n\n[User]: " + userMessage2.singleText())
     print("[LLM]: ")
 
     model.chat(chatMemory.messages(), responseHandler)

@@ -35,14 +35,14 @@ fun structuredPromptExample(model: ChatLanguageModel) {
                 "- ..."
             ]
     )
-    class CreateRecipePrompt(val dish: String, val ingredients: List<String>) {}
+    class CreateRecipePrompt(val dish: String, val ingredients: List<String>)
 
-    val receipePrompt =
+    val recipePrompt =
         CreateRecipePrompt("salad", listOf("cucumber", "tomato", "feta", "onion", "olives"))
-    println(receipePrompt)
-    println(receipePrompt.dish)
-    println(receipePrompt.ingredients)
-    val prompt = StructuredPromptProcessor.toPrompt(receipePrompt)
+    println(recipePrompt)
+    println(recipePrompt.dish)
+    println(recipePrompt.ingredients)
+    val prompt = StructuredPromptProcessor.toPrompt(recipePrompt)
 
     println(prompt.text())
 
@@ -52,8 +52,8 @@ fun structuredPromptExample(model: ChatLanguageModel) {
 }
 
 fun main(args: Array<String>) {
-
-    if (args.isEmpty()) {
+    val validOptions = setOf("simple", "structured")
+    if (args.isEmpty() || args[0] !in validOptions) {
         println("Incorrect usage; please provide an example type (simple or structured)")
         println("Usage: _03_PromptTemplate simple|structured")
         return
@@ -66,12 +66,8 @@ fun main(args: Array<String>) {
             .modelName(OpenAiChatModelName.GPT_4_O_MINI)
             .build()
 
-    val exampleType = args[0]
-
-    if (exampleType == "simple") {
-        simplePromptExample(model)
-        return
+    when (args[0]) {
+        "simple" -> simplePromptExample(model)
+        "structured" -> structuredPromptExample(model)
     }
-
-    structuredPromptExample(model)
 }

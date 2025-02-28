@@ -66,7 +66,7 @@ fun main() {
     val responseHandler =
         object : StreamingChatResponseHandler {
             override fun onPartialResponse(message: String) {
-                println("Received message: $message")
+                print(message)
             }
 
             override fun onCompleteResponse(message: ChatResponse) {

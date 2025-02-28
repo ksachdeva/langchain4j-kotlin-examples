@@ -12,7 +12,7 @@ So far I have used vscode with devcontainer extension to setup the development e
 
 The repository uses gradle and has multiple subprojects.
 
-Most examples are using `OPENAPI_KEY`. Make sure it is present in your environment variable.
+Most examples are using `OPENAI_API_KEY`. Make sure it is present in your environment variable.
 
 
 ## Running the examples

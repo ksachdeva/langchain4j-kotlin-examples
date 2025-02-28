@@ -36,7 +36,6 @@ fun main() {
 
     val recipe =
         assistant.createRecipeFrom("cucumber", "tomato", "feta", "onion", "olives", "lemon")
-
     println(recipe)
 
     val prompt =
@@ -45,6 +44,6 @@ fun main() {
             listOf("cucumber", "tomato", "feta", "onion", "olives", "potatoes")
         )
 
-    val receipe2 = assistant.createRecipe(prompt)
-    print(receipe2)
+    val recipe2 = assistant.createRecipe(prompt)
+    print(recipe2)
 }
