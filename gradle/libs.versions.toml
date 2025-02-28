@@ -5,9 +5,10 @@
 langchain4j = "1.0.0-beta1"
 tinylog = "2.6.2"
 kotlin = "2.1.10"
+ktfmt = "0.18.0"
 
 [plugins]
-ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.18.0" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version.ref = "ktfmt" }
 
 [libraries]
 langchain4j = { module = "dev.langchain4j:langchain4j", version.ref = "langchain4j" }

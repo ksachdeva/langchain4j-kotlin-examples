@@ -19,7 +19,7 @@ fun main() {
     val assistant =
         AiServices.builder(AssistantEx8::class.java)
             .chatLanguageModel(model)
-            .chatMemoryProvider { value -> MessageWindowChatMemory.withMaxMessages(10) }
+            .chatMemoryProvider { _ -> MessageWindowChatMemory.withMaxMessages(10) }
             .build()
 
     println(assistant.chat(1, "Hello! My name is Klaus."))

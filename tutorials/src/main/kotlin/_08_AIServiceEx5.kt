@@ -53,13 +53,14 @@ fun main() {
 
     val assistant = AiServices.create(HotelReviewIssueAnalyzer::class.java, model)
 
-    val review: String =
-        "Our stay at hotel was a mixed experience. The location was perfect, just a stone's throw away " +
-            "from the beach, which made our daily outings very convenient. The rooms were spacious and well-decorated, " +
-            "providing a comfortable and pleasant environment. However, we encountered several issues during our " +
-            "stay. The air conditioning in our room was not functioning properly, making the nights quite uncomfortable. " +
-            "Additionally, the room service was slow, and we had to call multiple times to get extra towels. Despite the " +
-            "friendly staff and enjoyable breakfast buffet, these issues significantly impacted our stay."
+    val review = """
+        |Our stay at hotel was a mixed experience. The location was perfect, just a stone's throw away 
+        |from the beach, which made our daily outings very convenient. The rooms were spacious and well-decorated, 
+        |providing a comfortable and pleasant environment. However, we encountered several issues during our 
+        |stay. The air conditioning in our room was not functioning properly, making the nights quite uncomfortable. 
+        |Additionally, the room service was slow, and we had to call multiple times to get extra towels. Despite the 
+        |friendly staff and enjoyable breakfast buffet, these issues significantly impacted our stay.
+        """.trimMargin()
 
     val issueCategories = assistant.analyzeReview(review)
     println(issueCategories)

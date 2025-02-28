@@ -28,16 +28,15 @@ fun main() {
     val translation = assistant.translate("Hello, how are you?", "italian")
     println(translation)
 
-    val text: String =
-        """
-        AI, or artificial intelligence, is a branch of computer science that aims to create 
-        machines that mimic human intelligence. This can range from simple tasks such as recognizing 
-        patterns or speech to more complex tasks like making decisions or predictions.
-    """
+    val text = """
+        |AI, or artificial intelligence, is a branch of computer science that aims to create 
+        |machines that mimic human intelligence. This can range from simple tasks such as recognizing 
+        |patterns or speech to more complex tasks like making decisions or predictions.
+        """.trimMargin()
 
     val bulletPoints = assistant.summarize(text, 3)
 
     for (point in bulletPoints) {
-        println("$point")
+        println(point)
     }
 }
